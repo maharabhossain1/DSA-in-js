@@ -44,3 +44,14 @@ function countUpandDown(n) {
 }
 // In total
 // In this Example Big O is only N  that means o(n)
+
+//Example -02
+// For nested Loop Big o in O(n^2)
+function nestedLoop(n) {
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j < n; j++) {
+      console.log(j);
+    }
+  }
+}
+// In this Example Big O is  O(n^2)
