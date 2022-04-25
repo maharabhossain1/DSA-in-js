@@ -1,6 +1,7 @@
 // Divided and conQure method
 //  Array must be sorted
 // we devided array into two parts then we conQure them   and we chack if the element is in the array  if it is we return the index otherwise we return -1
+// Time complexity : O(log n)
 
 function binarySearch(array, target) {
   var left = 0;
