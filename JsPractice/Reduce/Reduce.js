@@ -85,3 +85,90 @@ function getLocation(places, paths) {
 }
 const getLocationValue = getLocation(places, paths); // The Taj
 console.log("Location", getLocationValue);
+
+/////////////////////////////////
+// Finding the occurrence of a string in an array and make it object
+/////////////////////////////////
+
+// Example-1
+const fruits = ["Banana", "Orange", "Apple", "Orange", "Pear", "Banana"];
+
+const occurrence = fruits.reduce((acc, curr) => {
+  acc[curr] = acc[curr] ? acc[curr] + 1 : 1;
+  return acc;
+}, {});
+console.log(occurrence);
+
+// Example-2
+const comments = [
+  {
+    id: 1,
+    name: "John",
+    comment: "This is a good product",
+  },
+  {
+    id: 2,
+    name: "Kabir",
+    comment: "This is a good product1",
+  },
+  {
+    id: 3,
+    name: "John",
+    comment: "This is a good product",
+  },
+  {
+    id: 4,
+    name: "Kabir",
+    comment: "This is a good product",
+  },
+  {
+    id: 5,
+    name: "John",
+    comment: "This is a good product",
+  },
+];
+
+const commentsByName = comments.reduce((acc, curr) => {
+  const key = curr.name;
+  const value = acc[key] ? [...acc[key], curr.comment] : [curr.comment];
+  acc[key] = value;
+  return acc;
+}, {});
+
+// Example-3
+const studentsArray = [
+  { name: "Kingsley", score: 70, position: "1st" },
+  { name: "Jack", score: 80, position: "2nd" },
+  { name: "Joe", score: 63, position: "3rd" },
+  { name: "Beth", score: 75, position: "4rd" },
+  { name: "Kareem", score: 59, position: "5th" },
+  { name: "Sarah", score: 93, position: "6th" },
+];
+
+const studentObj = studentsArray.reduce((acc, student) => {
+  return { ...acc, [student.name]: student.position };
+}, {});
+
+console.log(studentObj);
+
+// Example-4
+// Finding maximum and minimum value
+const students = [
+  { name: "Kingsley", score: 70 },
+  { name: "Jack", score: 80 },
+  { name: "Joe", score: 63 },
+  { name: "Beth", score: 75 },
+  { name: "Kareem", score: 59 },
+  { name: "Sarah", score: 93 },
+];
+
+const max = students.reduce((acc, student) => {
+  const field1 = "max";
+  const field2 = "min";
+  acc[field1] = acc[field1] > student.score ? acc[field1] : student.score;
+  acc[field2] = acc[field2] < student.score ? acc[field2] : student.score;
+
+  return acc;
+}, {});
+
+console.log(max);
