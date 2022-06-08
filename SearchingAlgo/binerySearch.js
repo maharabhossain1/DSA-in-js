@@ -65,7 +65,7 @@ var searchInsert1 = function (nums, target) {
 
   return index;
 };
-console.log(searchInsert1([1, 3, 5, 6], 2));
+console.log(searchInsert1([1, 3, 5, 6], 7));
 
 // Search Insert Position Using Binary Search Algorithm Second type of solution
 var searchInsert2 = function (nums, target) {
@@ -74,7 +74,7 @@ var searchInsert2 = function (nums, target) {
   let mid = Math.floor((left + right) / 2);
 
   if (target > nums[nums.length - 1]) {
-    mid = mid.length;
+    mid = nums.length;
   } else {
     while (left < right) {
       let value = nums[mid];
@@ -92,4 +92,4 @@ var searchInsert2 = function (nums, target) {
   return mid;
 };
 
-console.log(searchInsert2([1, 3, 5, 6], 2));
+console.log(searchInsert2([1, 3, 5, 6], 7));
